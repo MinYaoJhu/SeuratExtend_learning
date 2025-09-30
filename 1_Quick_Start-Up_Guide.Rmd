@@ -7,6 +7,13 @@ output:
     keep_md: true
 ---
 
+```{r}
+library(Seurat)
+library(SeuratExtend)
+set.seed(2025)
+```
+
+
 ## Quick Start-Up Guide {#quick-start-up-guide}
 
 This quick start-up guide provides an overview of the most frequently used functions in single-cell RNA sequencing (scRNA-seq) analysis. After running the standard Seurat pipeline (refer to this [Seurat pbmc3k tutorial](https://satijalab.org/seurat/articles/pbmc3k_tutorial)), you should have a Seurat object ready for further analysis. Below, we illustrate the use of a subset of the pbmc dataset as an example to demonstrate various functionalities of the `SeuratExtend` package.
@@ -23,9 +30,6 @@ pbmc$cluster <- Idents(pbmc)
 ### Visualizing Clusters
 
 ```{r, fig.width=5.5, fig.height=4, message=FALSE, warning=FALSE}
-library(Seurat)
-library(SeuratExtend)
-
 # Visualizing cell clusters using DimPlot2
 DimPlot2(pbmc, theme = theme_umap_arrows())
 ```
@@ -188,32 +192,32 @@ GSEAplot(
 After conducting Gene Regulatory Networks Analysis using pySCENIC, import the output and visualize various aspects within Seurat:
 
 ```{r, fig.width=8.5, fig.height=5.5, message=FALSE, warning=FALSE}
-# Downloading a pre-computed SCENIC loom file
-scenic_loom_path <- file.path(tempdir(), "pyscenic_integrated-output.loom")
-download.file("https://zenodo.org/records/10944066/files/pbmc3k_small_pyscenic_integrated-output.loom", scenic_loom_path, mode = "wb")
-
-# Importing SCENIC Loom Files into Seurat
-pbmc <- ImportPyscenicLoom(scenic_loom_path, seu = pbmc)
-
-# Visualizing variables such as cluster, gene expression, and SCENIC regulon activity with customized colors
-DimPlot2(
-  pbmc,
-  features = c("cluster", "orig.ident", "CEBPA", "tf_CEBPA"),
-  cols = list("tf_CEBPA" = "OrRd"),
-  theme = NoAxes()
-) + theme_umap_arrows()
+# # Downloading a pre-computed SCENIC loom file
+# scenic_loom_path <- file.path(tempdir(), "pyscenic_integrated-output.loom")
+# download.file("https://zenodo.org/records/10944066/files/pbmc3k_small_pyscenic_integrated-output.loom", scenic_loom_path, mode = "wb")
+# 
+# # Importing SCENIC Loom Files into Seurat
+# pbmc <- ImportPyscenicLoom(scenic_loom_path, seu = pbmc)
+# 
+# # Visualizing variables such as cluster, gene expression, and SCENIC regulon activity with customized colors
+# DimPlot2(
+#   pbmc,
+#   features = c("cluster", "orig.ident", "CEBPA", "tf_CEBPA"),
+#   cols = list("tf_CEBPA" = "OrRd"),
+#   theme = NoAxes()
+# ) + theme_umap_arrows()
 ```
 
 ```{r, fig.width=7, fig.height=3.5, message=FALSE, warning=FALSE}
-# Creating a waterfall plot to compare regulon activity between cell types
-DefaultAssay(pbmc) <- "TF"
-WaterfallPlot(
-  pbmc,
-  features = rownames(pbmc),
-  ident.1 = "Mono CD14",
-  ident.2 = "CD8 T cell",
-  exp.transform = FALSE,
-  top.n = 20)
+# # Creating a waterfall plot to compare regulon activity between cell types
+# DefaultAssay(pbmc) <- "TF"
+# WaterfallPlot(
+#   pbmc,
+#   features = rownames(pbmc),
+#   ident.1 = "Mono CD14",
+#   ident.2 = "CD8 T cell",
+#   exp.transform = FALSE,
+#   top.n = 20)
 ```
 
 ### Trajectory Analysis with Palantir in R
@@ -235,7 +239,7 @@ Palantir uses diffusion maps for dimensionality reduction to infer trajectories.
 
 ```{r, fig.width=6.5, fig.height=5, message=FALSE, warning=FALSE}
 # Compute diffusion map
-mye_small <- Palantir.RunDM(mye_small)
+mye_small <- Palantir.RunDM(mye_small, n_components = 20)
 
 # Visualize the first two diffusion map dimensions
 DimPlot2(mye_small, reduction = "ms")
@@ -248,7 +252,9 @@ Pseudotime ordering assigns each cell a time point in a trajectory, indicating i
 ```{r, fig.width=7, fig.height=5.5, message=FALSE, warning=FALSE}
 # Calculate pseudotime with a specified start cell
 mye_small <- Palantir.Pseudotime(mye_small, start_cell = "sample1_GAGAGGTAGCAGTACG-1")
+```
 
+```{r}
 # Store pseudotime results in meta.data for easy plotting
 ps <- mye_small@misc$Palantir$Pseudotime
 colnames(ps)[3:4] <- c("fate1", "fate2")
@@ -262,6 +268,7 @@ DimPlot2(
   cols = list(continuous = "A", Entropy = "D"),
   theme = NoAxes())
 ```
+
 
 #### Visualization Along Trajectories
 

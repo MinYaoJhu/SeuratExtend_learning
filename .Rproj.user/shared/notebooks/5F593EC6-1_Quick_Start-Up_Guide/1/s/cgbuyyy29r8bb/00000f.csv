@@ -1,0 +1,4 @@
+"0","colnames(pbmc@meta.data)"
+"1","[1] ""orig.ident""      ""nCount_RNA""      ""nFeature_RNA""    ""percent.mt""     
+[5] ""RNA_snn_res.0.5"" ""seurat_clusters"" ""cluster""        
+"

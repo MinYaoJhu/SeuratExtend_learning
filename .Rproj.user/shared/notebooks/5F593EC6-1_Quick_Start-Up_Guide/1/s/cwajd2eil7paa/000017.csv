@@ -1,0 +1,5 @@
+"0","library(Seurat)"
+"0","library(SeuratExtend)"
+"0",""
+"0","# Visualizing cell clusters using DimPlot2"
+"0","DimPlot2(pbmc, theme = theme_umap_arrows())"

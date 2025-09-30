@@ -1,0 +1,52 @@
+"0","# Downloading a pre-computed SCENIC loom file"
+"0","scenic_loom_path <- file.path(tempdir(), ""pyscenic_integrated-output.loom"")"
+"0","download.file(""https://zenodo.org/records/10944066/files/pbmc3k_small_pyscenic_integrated-output.loom"", scenic_loom_path, mode = ""wb"")"
+"2","trying URL 'https://zenodo.org/records/10944066/files/pbmc3k_small_pyscenic_integrated-output.loom'
+"
+"2","Content type 'application/octet-stream' length 33355070 bytes (31.8 MB)
+"
+"2","downloaded 31.8 MB
+
+"
+"0","# Importing SCENIC Loom Files into Seurat"
+"0","pbmc <- ImportPyscenicLoom(scenic_loom_path, seu = pbmc)"
+"0","y"
+"1","[36m──[39m [36mR CMD build[39m [36m────────────────────────────────────────────────────────────[39m
+"
+"1","      [32m✔[39m  [38;5;247mchecking for file 'C:\Users\myj23\AppData\Local\Temp\RtmpWQtKwv\remotes39c82f4a29b3\mojaveazure-loomR-1eca16a/DESCRIPTION'[39m[36m[39m"
+"1","
+"
+"1","      [38;5;247m─[39m[38;5;247m  [39m[38;5;247mpreparing 'loomR':[39m[36m[39m"
+"1","
+   checking DESCRIPTION meta-information ...     checking DESCRIPTION meta-information ...   [32m✔[39m  [38;5;247mchecking DESCRIPTION meta-information[39m[36m[39m"
+"1","
+"
+"1","      [38;5;247m─[39m[38;5;247m  [39m[38;5;247mchecking for LF line-endings in source and make files and shell scripts[39m[36m[39m
+"
+"1","  [38;5;247m─[39m[38;5;247m  [39m[38;5;247mchecking for empty or unneeded directories[39m[36m[39m
+"
+"1","   Omitted 'LazyData' from DESCRIPTION
+"
+"1","      "
+"1","[38;5;247m─[39m[38;5;247m  [39m[38;5;247mbuilding 'loomR_0.2.1.9000.tar.gz'[39m[36m[39m
+"
+"1","     
+"
+"1","* installing *source* package 'loomR' ...
+** this is package 'loomR' version '0.2.1.9000'
+** using staged installation
+** R
+** byte-compile and prepare package for lazy loading
+"
+"1","** help
+"
+"1","*** installing help indices
+** building package indices
+"
+"1","** testing if installed package can be loaded from temporary location
+"
+"1","** testing if installed package can be loaded from final location
+"
+"1","** testing if installed package keeps a record of temporary installation path
+* DONE (loomR)
+"

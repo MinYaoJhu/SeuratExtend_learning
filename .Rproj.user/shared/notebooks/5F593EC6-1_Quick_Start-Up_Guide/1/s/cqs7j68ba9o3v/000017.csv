@@ -1,2 +1,0 @@
-"0","# Cluster distribution bar plot"
-"0","ClusterDistrBar(pbmc$orig.ident, pbmc$cluster)"

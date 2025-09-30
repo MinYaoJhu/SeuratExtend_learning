@@ -1,8 +1,0 @@
-"0","# Create grouped features"
-"0","grouped_features <- list("
-"0","  ""B_cell_markers"" = c(""MS4A1"", ""CD79A""),"
-"0","  ""T_cell_markers"" = c(""CD3D"", ""CD8A"", ""IL7R""),"
-"0","  ""Myeloid_markers"" = c(""CD14"", ""FCGR3A"", ""S100A8"")"
-"0",")"
-"0",""
-"0","DotPlot2(pbmc, features = grouped_features)"

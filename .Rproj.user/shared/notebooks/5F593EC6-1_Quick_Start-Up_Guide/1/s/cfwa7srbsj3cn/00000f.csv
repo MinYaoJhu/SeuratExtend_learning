@@ -1,6 +1,0 @@
-"0","GSEAplot("
-"0","  pbmc,"
-"0","  ident.1 = ""B"","
-"0","  ident.2 = ""CD8 T"","
-"0","  title = ""GO:0042113 B cell activation (335g)"","
-"0","  geneset = GO_Data$human$GO2Gene[[""GO:0042113""]])"

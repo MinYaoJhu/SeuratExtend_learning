@@ -2,7 +2,9 @@
 title: "Trajectory and Pseudotime Analysis"
 author: "Min-Yao"
 date: "2025-09-30"
-output: html_document
+output: 
+  html_document: 
+    keep_md: true
 ---
 
 ## Table of Contents
@@ -395,7 +397,7 @@ First, we convert a `Seurat` object to a `loom` file which can then be used to c
 
 ```{r convert-seurat-to-loom}
 # Convert Seurat object to loom file and save it locally
-pbmc_loom_path <- file.path(tempdir(), "pbmc3k_small.loom")
+pbmc_loom_path <- file.path("D:/Oldroyd_lab/GitHub/SeuratExtend_learning/output/pbmc3k_small.loom")
 Seu2Loom(pbmc, filename = pbmc_loom_path, add.normdata = TRUE)
 ```
 
@@ -455,7 +457,7 @@ You can save the `AnnData` object to a local file for future use:
 
 ```{r save-anndata}
 # Save the AnnData object to a local file
-pbmc_adata_path <- file.path(tempdir(), "pbmc3k_small.h5ad")
+pbmc_adata_path <- file.path("D:/Oldroyd_lab/GitHub/SeuratExtend_learning/output/pbmc3k_small.h5ad")
 adata.Save(pbmc_adata_path)
 ```
 

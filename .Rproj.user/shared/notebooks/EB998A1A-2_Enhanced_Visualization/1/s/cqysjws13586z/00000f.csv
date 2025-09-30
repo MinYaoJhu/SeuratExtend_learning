@@ -11,203 +11,253 @@
 "1","Package: Seurat
 Version: 5.3.0
 Title: Tools for Single Cell Genomics
-Description: A toolkit for quality control, analysis, and exploration of single cell
-         RNA sequencing data. 'Seurat' aims to enable users to identify and
-         interpret sources of heterogeneity from single cell transcriptomic
-         measurements, and to integrate diverse types of single cell data. See
-         Satija R, Farrell J, Gennert D, et al (2015) <doi:10.1038/nbt.3192>,
-         Macosko E, Basu A, Satija R, et al (2015) <doi:10.1016/j.cell.2015.05.002>,
-         Stuart T, Butler A, et al (2019) <doi:10.1016/j.cell.2019.05.031>, and Hao,
-         Hao, et al (2020) <doi:10.1101/2020.10.12.335331> for more details.
+Description: A toolkit for quality control, analysis, and
+       exploration of single cell RNA sequencing data. 'Seurat'
+       aims to enable users to identify and interpret sources of
+       heterogeneity from single cell transcriptomic
+       measurements, and to integrate diverse types of single
+       cell data. See Satija R, Farrell J, Gennert D, et al
+       (2015) <doi:10.1038/nbt.3192>, Macosko E, Basu A, Satija
+       R, et al (2015) <doi:10.1016/j.cell.2015.05.002>, Stuart
+       T, Butler A, et al (2019)
+       <doi:10.1016/j.cell.2019.05.031>, and Hao, Hao, et al
+       (2020) <doi:10.1101/2020.10.12.335331> for more details.
 Authors@R: c( person(given = ""Andrew"", family = ""Butler"", email =
-         ""abutler@nygenome.org"", role = ""ctb"", comment = c(ORCID =
-         ""0000-0003-3608-0463"")), person(given = ""Saket"", family = ""Choudhary"",
-         email = ""schoudhary@nygenome.org"", role = ""ctb"", comment = c(ORCID =
-         ""0000-0001-5202-7633"")), person(given = 'David', family = 'Collins', email
-         = 'dcollins@nygenome.org', role = 'ctb', comment = c(ORCID =
-         '0000-0001-9243-7821')), person(given = ""Charlotte"", family = ""Darby"",
-         email = ""cdarby@nygenome.org"", role = ""ctb"", comment = c(ORCID =
-         ""0000-0003-2195-5300"")), person(given = ""Jeff"", family = ""Farrell"", email =
-         ""jfarrell@g.harvard.edu"", role = ""ctb""), person(given = ""Isabella"", family
-         = ""Grabski"", email = ""igrabski@nygenome.org"", role = ""ctb"", comment =
-         c(ORCID = ""0000-0002-0616-5469"")), person(given = ""Christoph"", family =
-         ""Hafemeister"", email = ""chafemeister@nygenome.org"", role = ""ctb"", comment =
-         c(ORCID = ""0000-0001-6365-8254"")), person(given = ""Yuhan"", family = ""Hao"",
-         email = ""yhao@nygenome.org"", role = ""ctb"", comment = c(ORCID =
-         ""0000-0002-1810-0822"")), person(given = ""Austin"", family = ""Hartman"", email
-         = ""ahartman@nygenome.org"", role = ""ctb"", comment = c(ORCID =
-         ""0000-0001-7278-1852"")), person(given = ""Paul"", family = ""Hoffman"", email =
-         ""hoff0792@umn.edu"", role = ""ctb"", comment = c(ORCID =
-         ""0000-0002-7693-8957"")), person(given = ""Jaison"", family = ""Jain"", email =
-         ""jjain@nygenome.org"", role = ""ctb"", comment = c(ORCID =
-         ""0000-0002-9478-5018"")), person(given = ""Longda"", family = ""Jiang"", email =
-         ""ljiang@nygenome.org"", role = ""ctb"", comment = c(ORCID =
-         ""0000-0003-4964-6497"")), person(given = ""Madeline"", family = ""Kowalski"",
-         email = ""mkowalski@nygenome.org"", role = ""ctb"", comment = c(ORCID =
-         ""0000-0002-5655-7620"")), person(given = ""Skylar"", family = ""Li"", email =
-         ""sli@nygenome.org"", role = ""ctb""), person(given = ""Gesmira"", family =
-         ""Molla"", email = 'gmolla@nygenome.org', role = 'ctb', comment = c(ORCID =
-         '0000-0002-8628-5056')), person(given = ""Efthymia"", family = ""Papalexi"",
-         email = ""epapalexi@nygenome.org"", role = ""ctb"", comment = c(ORCID =
-         ""0000-0001-5898-694X"")), person(given = ""Patrick"", family = ""Roelli"", email
-         = ""proelli@nygenome.org"", role = ""ctb""), person(given = ""Rahul"", family =
-         ""Satija"", email = ""seurat@nygenome.org"", role = c(""aut"", ""cre""), comment =
-         c(ORCID = ""0000-0001-9448-8833"")), person(given = ""Karthik"", family =
-         ""Shekhar"", email = ""kshekhar@berkeley.edu"", role = ""ctb""), person(given =
-         ""Avi"", family = ""Srivastava"", email = ""asrivastava@nygenome.org"", role =
-         ""ctb"", comment = c(ORCID = ""0000-0001-9798-2079"")), person(given = ""Tim"",
-         family = ""Stuart"", email = ""tstuart@nygenome.org"", role = ""ctb"", comment =
-         c(ORCID = ""0000-0002-3044-0897"")), person(given = ""Kristof"", family =
-         ""Torkenczy"", email = """", role = ""ctb"", comment = c(ORCID =
-         ""0000-0002-4869-7957"")), person(given = ""Shiwei"", family = ""Zheng"", email =
-         ""szheng@nygenome.org"", role = ""ctb"", comment = c(ORCID =
-         ""0000-0001-6682-6743"")), person(""Satija Lab and Collaborators"", role =
-         ""fnd"") )
+       ""abutler@nygenome.org"", role = ""ctb"", comment = c(ORCID =
+       ""0000-0003-3608-0463"")), person(given = ""Saket"", family =
+       ""Choudhary"", email = ""schoudhary@nygenome.org"", role =
+       ""ctb"", comment = c(ORCID = ""0000-0001-5202-7633"")),
+       person(given = 'David', family = 'Collins', email =
+       'dcollins@nygenome.org', role = 'ctb', comment = c(ORCID =
+       '0000-0001-9243-7821')), person(given = ""Charlotte"",
+       family = ""Darby"", email = ""cdarby@nygenome.org"", role =
+       ""ctb"", comment = c(ORCID = ""0000-0003-2195-5300"")),
+       person(given = ""Jeff"", family = ""Farrell"", email =
+       ""jfarrell@g.harvard.edu"", role = ""ctb""), person(given =
+       ""Isabella"", family = ""Grabski"", email =
+       ""igrabski@nygenome.org"", role = ""ctb"", comment = c(ORCID =
+       ""0000-0002-0616-5469"")), person(given = ""Christoph"",
+       family = ""Hafemeister"", email =
+       ""chafemeister@nygenome.org"", role = ""ctb"", comment =
+       c(ORCID = ""0000-0001-6365-8254"")), person(given = ""Yuhan"",
+       family = ""Hao"", email = ""yhao@nygenome.org"", role = ""ctb"",
+       comment = c(ORCID = ""0000-0002-1810-0822"")), person(given
+       = ""Austin"", family = ""Hartman"", email =
+       ""ahartman@nygenome.org"", role = ""ctb"", comment = c(ORCID =
+       ""0000-0001-7278-1852"")), person(given = ""Paul"", family =
+       ""Hoffman"", email = ""hoff0792@umn.edu"", role = ""ctb"",
+       comment = c(ORCID = ""0000-0002-7693-8957"")), person(given
+       = ""Jaison"", family = ""Jain"", email = ""jjain@nygenome.org"",
+       role = ""ctb"", comment = c(ORCID = ""0000-0002-9478-5018"")),
+       person(given = ""Longda"", family = ""Jiang"", email =
+       ""ljiang@nygenome.org"", role = ""ctb"", comment = c(ORCID =
+       ""0000-0003-4964-6497"")), person(given = ""Madeline"", family
+       = ""Kowalski"", email = ""mkowalski@nygenome.org"", role =
+       ""ctb"", comment = c(ORCID = ""0000-0002-5655-7620"")),
+       person(given = ""Skylar"", family = ""Li"", email =
+       ""sli@nygenome.org"", role = ""ctb""), person(given =
+       ""Gesmira"", family = ""Molla"", email =
+       'gmolla@nygenome.org', role = 'ctb', comment = c(ORCID =
+       '0000-0002-8628-5056')), person(given = ""Efthymia"", family
+       = ""Papalexi"", email = ""epapalexi@nygenome.org"", role =
+       ""ctb"", comment = c(ORCID = ""0000-0001-5898-694X"")),
+       person(given = ""Patrick"", family = ""Roelli"", email =
+       ""proelli@nygenome.org"", role = ""ctb""), person(given =
+       ""Rahul"", family = ""Satija"", email = ""seurat@nygenome.org"",
+       role = c(""aut"", ""cre""), comment = c(ORCID =
+       ""0000-0001-9448-8833"")), person(given = ""Karthik"", family
+       = ""Shekhar"", email = ""kshekhar@berkeley.edu"", role =
+       ""ctb""), person(given = ""Avi"", family = ""Srivastava"", email
+       = ""asrivastava@nygenome.org"", role = ""ctb"", comment =
+       c(ORCID = ""0000-0001-9798-2079"")), person(given = ""Tim"",
+       family = ""Stuart"", email = ""tstuart@nygenome.org"", role =
+       ""ctb"", comment = c(ORCID = ""0000-0002-3044-0897"")),
+       person(given = ""Kristof"", family = ""Torkenczy"", email =
+       """", role = ""ctb"", comment = c(ORCID =
+       ""0000-0002-4869-7957"")), person(given = ""Shiwei"", family =
+       ""Zheng"", email = ""szheng@nygenome.org"", role = ""ctb"",
+       comment = c(ORCID = ""0000-0001-6682-6743"")),
+       person(""Satija Lab and Collaborators"", role = ""fnd"") )
 License: MIT + file LICENSE
-URL: https://satijalab.org/seurat, https://github.com/satijalab/seurat
+URL: https://satijalab.org/seurat,
+       https://github.com/satijalab/seurat
 BugReports: https://github.com/satijalab/seurat/issues
 Additional_repositories: https://satijalab.r-universe.dev,
-         https://bnprks.r-universe.dev
+       https://bnprks.r-universe.dev
 Depends: R (>= 4.0.0), methods, SeuratObject (>= 5.0.2)
-Imports: cluster, cowplot, fastDummies, fitdistrplus, future, future.apply, generics
-         (>= 0.1.3), ggplot2 (>= 3.3.0), ggrepel, ggridges, graphics, grDevices,
-         grid, httr, ica, igraph, irlba, jsonlite, KernSmooth, leidenbase,
-         lifecycle, lmtest, MASS, Matrix (>= 1.5-0), matrixStats, miniUI, patchwork,
-         pbapply, plotly (>= 4.9.0), png, progressr, RANN, RColorBrewer, Rcpp (>=
-         1.0.7), RcppAnnoy (>= 0.0.18), RcppHNSW, reticulate, rlang, ROCR, RSpectra,
-         Rtsne, scales, scattermore (>= 1.2), sctransform (>= 0.4.1), shiny,
-         spatstat.explore, spatstat.geom, stats, tibble, tools, utils, uwot (>=
-         0.1.10)
-Suggests: ape, arrow, Biobase, BiocGenerics, BPCells, data.table, DESeq2,
-         DelayedArray, enrichR, GenomicRanges, GenomeInfoDb, glmGamPoi, ggrastr,
-         harmony, hdf5r, IRanges, limma, MAST, metap, mixtools, monocle, presto,
-         rsvd, R.utils, Rfast2, rtracklayer, S4Vectors, sf (>= 1.0.0),
-         SingleCellExperiment, SummarizedExperiment, testthat, VGAM
+Imports: cluster, cowplot, fastDummies, fitdistrplus, future,
+       future.apply, generics (>= 0.1.3), ggplot2 (>= 3.3.0),
+       ggrepel, ggridges, graphics, grDevices, grid, httr, ica,
+       igraph, irlba, jsonlite, KernSmooth, leidenbase,
+       lifecycle, lmtest, MASS, Matrix (>= 1.5-0), matrixStats,
+       miniUI, patchwork, pbapply, plotly (>= 4.9.0), png,
+       progressr, RANN, RColorBrewer, Rcpp (>= 1.0.7), RcppAnnoy
+       (>= 0.0.18), RcppHNSW, reticulate, rlang, ROCR, RSpectra,
+       Rtsne, scales, scattermore (>= 1.2), sctransform (>=
+       0.4.1), shiny, spatstat.explore, spatstat.geom, stats,
+       tibble, tools, utils, uwot (>= 0.1.10)
+Suggests: ape, arrow, Biobase, BiocGenerics, BPCells, data.table,
+       DESeq2, DelayedArray, enrichR, GenomicRanges,
+       GenomeInfoDb, glmGamPoi, ggrastr, harmony, hdf5r, IRanges,
+       limma, MAST, metap, mixtools, monocle, presto, rsvd,
+       R.utils, Rfast2, rtracklayer, S4Vectors, sf (>= 1.0.0),
+       SingleCellExperiment, SummarizedExperiment, testthat, VGAM
 LinkingTo: Rcpp (>= 0.11.0), RcppEigen, RcppProgress
 BuildManual: true
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 7.3.2
-Collate: 'RcppExports.R' 'reexports.R' 'generics.R' 'clustering.R' 'visualization.R'
-         .....
+Collate: 'RcppExports.R' 'reexports.R' 'generics.R'
+       'clustering.R' .....
 NeedsCompilation: yes
 Packaged: 2025-04-23 19:32:38 UTC; root
-Author: Andrew Butler [ctb] (<https://orcid.org/0000-0003-3608-0463>), Saket
-         Choudhary [ctb] (<https://orcid.org/0000-0001-5202-7633>), David Collins
-         [ctb] (<https://orcid.org/0000-0001-9243-7821>), Charlotte Darby [ctb]
-         (<https://orcid.org/0000-0003-2195-5300>), Jeff Farrell [ctb], Isabella
-         Grabski [ctb] (<https://orcid.org/0000-0002-0616-5469>), Christoph
-         Hafemeister [ctb] (<https://orcid.org/0000-0001-6365-8254>), Yuhan Hao
-         [ctb] (<https://orcid.org/0000-0002-1810-0822>), Austin Hartman [ctb]
-         (<https://orcid.org/0000-0001-7278-1852>), Paul Hoffman [ctb]
-         (<https://orcid.org/0000-0002-7693-8957>), Jaison Jain [ctb]
-         (<https://orcid.org/0000-0002-9478-5018>), Longda Jiang [ctb]
-         (<https://orcid.org/0000-0003-4964-6497>), Madeline Kowalski [ctb]
-         (<https://orcid.org/0000-0002-5655-7620>), Skylar Li [ctb], Gesmira Molla
-         [ctb] (<https://orcid.org/0000-0002-8628-5056>), Efthymia Papalexi [ctb]
-         (<https://orcid.org/0000-0001-5898-694X>), Patrick Roelli [ctb], Rahul
-         Satija [aut, cre] (<https://orcid.org/0000-0001-9448-8833>), Karthik
-         Shekhar [ctb], Avi Srivastava [ctb]
-         (<https://orcid.org/0000-0001-9798-2079>), Tim Stuart [ctb]
-         (<https://orcid.org/0000-0002-3044-0897>), Kristof Torkenczy [ctb]
-         (<https://orcid.org/0000-0002-4869-7957>), Shiwei Zheng [ctb]
-         (<https://orcid.org/0000-0001-6682-6743>), Satija Lab and Collaborators
-         [fnd]
+Author: Andrew Butler [ctb]
+       (<https://orcid.org/0000-0003-3608-0463>), Saket Choudhary
+       [ctb] (<https://orcid.org/0000-0001-5202-7633>), David
+       Collins [ctb] (<https://orcid.org/0000-0001-9243-7821>),
+       Charlotte Darby [ctb]
+       (<https://orcid.org/0000-0003-2195-5300>), Jeff Farrell
+       [ctb], Isabella Grabski [ctb]
+       (<https://orcid.org/0000-0002-0616-5469>), Christoph
+       Hafemeister [ctb]
+       (<https://orcid.org/0000-0001-6365-8254>), Yuhan Hao [ctb]
+       (<https://orcid.org/0000-0002-1810-0822>), Austin Hartman
+       [ctb] (<https://orcid.org/0000-0001-7278-1852>), Paul
+       Hoffman [ctb] (<https://orcid.org/0000-0002-7693-8957>),
+       Jaison Jain [ctb]
+       (<https://orcid.org/0000-0002-9478-5018>), Longda Jiang
+       [ctb] (<https://orcid.org/0000-0003-4964-6497>), Madeline
+       Kowalski [ctb] (<https://orcid.org/0000-0002-5655-7620>),
+       Skylar Li [ctb], Gesmira Molla [ctb]
+       (<https://orcid.org/0000-0002-8628-5056>), Efthymia
+       Papalexi [ctb] (<https://orcid.org/0000-0001-5898-694X>),
+       Patrick Roelli [ctb], Rahul Satija [aut, cre]
+       (<https://orcid.org/0000-0001-9448-8833>), Karthik Shekhar
+       [ctb], Avi Srivastava [ctb]
+       (<https://orcid.org/0000-0001-9798-2079>), Tim Stuart
+       [ctb] (<https://orcid.org/0000-0002-3044-0897>), Kristof
+       Torkenczy [ctb] (<https://orcid.org/0000-0002-4869-7957>),
+       Shiwei Zheng [ctb]
+       (<https://orcid.org/0000-0001-6682-6743>), Satija Lab and
+       Collaborators [fnd]
 Maintainer: Rahul Satija <seurat@nygenome.org>
 Repository: CRAN
 Date/Publication: 2025-04-23 22:10:02 UTC
-Built: R 4.5.0; x86_64-w64-mingw32; 2025-06-27 03:12:13 UTC; windows
+Built: R 4.5.0; x86_64-w64-mingw32; 2025-06-27 03:12:13 UTC;
+       windows
 Archs: x64
 
 -- File: C:/Users/myj23/AppData/Local/Programs/R/R-4.5.1/library/Seurat/Meta/package.rds 
 
 $SeuratObject
-"
-"1","Package: SeuratObject
+Package: SeuratObject
 Title: Data Structures for Single Cell Data
-Version: 5.2.0
+"
+"1","Version: 5.2.0
 Authors@R: c( person(given = 'Paul', family = 'Hoffman', email =
-         'hoff0792@alumni.umn.edu', role = 'aut', comment = c(ORCID =
-         '0000-0002-7693-8957')), person(given = 'Rahul', family = 'Satija', email =
-         'seurat@nygenome.org', role = c('aut', 'cre'), comment = c(ORCID =
-         '0000-0001-9448-8833')), person(given = 'David', family = 'Collins', email
-         = 'dcollins@nygenome.org', role = 'aut', comment = c(ORCID =
-         '0000-0001-9243-7821')), person(given = ""Yuhan"", family = ""Hao"", email =
-         'yhao@nygenome.org', role = 'aut', comment = c(ORCID =
-         '0000-0002-1810-0822')), person(given = ""Austin"", family = ""Hartman"", email
-         = 'ahartman@nygenome.org', role = 'aut', comment = c(ORCID =
-         '0000-0001-7278-1852')), person(given = ""Gesmira"", family = ""Molla"", email
-         = 'gmolla@nygenome.org', role = 'aut', comment = c(ORCID =
-         '0000-0002-8628-5056')), person(given = 'Andrew', family = 'Butler', email
-         = 'abutler@nygenome.org', role = 'aut', comment = c(ORCID =
-         '0000-0003-3608-0463')), person(given = 'Tim', family = 'Stuart', email =
-         'tstuart@nygenome.org', role = 'aut', comment = c(ORCID =
-         '0000-0002-3044-0897')), person(given = ""Madeline"", family = ""Kowalski"",
-         email = ""mkowalski@nygenome.org"", role = ""ctb"", comment = c(ORCID =
-         ""0000-0002-5655-7620"")), person(given = ""Saket"", family = ""Choudhary"",
-         email = ""schoudhary@nygenome.org"", role = ""ctb"", comment = c(ORCID =
-         ""0000-0001-5202-7633"")), person(given = ""Skylar"", family = ""Li"", email =
-         ""sli@nygenome.org"", role = ""ctb""), person(given = ""Longda"", family =
-         ""Jiang"", email = ""ljiang@nygenome.org"", role = ""ctb"", comment = c(ORCID =
-         ""0000-0003-4964-6497"")), person(given = ""Anagha"", family = ""Shenoy"", email
-         = ""ashenoy@nygenome.org"", role = ""ctb"", comment = c(ORCID =
-         ""0000-0002-0537-6862"")), person(given = 'Jeff', family = 'Farrell', email =
-         'jfarrell@g.harvard.edu', role = 'ctb'), person(given = 'Shiwei', family =
-         'Zheng', email = 'szheng@nygenome.org', role = 'ctb', comment = c(ORCID =
-         '0000-0001-6682-6743')), person(given = 'Christoph', family =
-         'Hafemeister', email = 'chafemeister@nygenome.org', role = 'ctb', comment =
-         c(ORCID = '0000-0001-6365-8254')), person(given = 'Patrick', family =
-         'Roelli', email = 'proelli@nygenome.org', role = 'ctb') )
-Description: Defines S4 classes for single-cell genomic data and associated
-         information, such as dimensionality reduction embeddings, nearest-neighbor
-         graphs, and spatially-resolved coordinates. Provides data access methods
-         and R-native hooks to ensure the Seurat object is familiar to other R
-         users. See Satija R, Farrell J, Gennert D, et al (2015)
-         <doi:10.1038/nbt.3192>, Macosko E, Basu A, Satija R, et al (2015)
-         <doi:10.1016/j.cell.2015.05.002>, and Stuart T, Butler A, et al (2019)
-         <doi:10.1016/j.cell.2019.05.031>, Hao Y, Hao S, et al (2021)
-         <doi:10.1016/j.cell.2021.04.048> and Hao Y, et al (2023)
-         <doi:10.1101/2022.02.24.481684> for more details.
+       'hoff0792@alumni.umn.edu', role = 'aut', comment = c(ORCID
+       = '0000-0002-7693-8957')), person(given = 'Rahul', family
+       = 'Satija', email = 'seurat@nygenome.org', role = c('aut',
+       'cre'), comment = c(ORCID = '0000-0001-9448-8833')),
+       person(given = 'David', family = 'Collins', email =
+       'dcollins@nygenome.org', role = 'aut', comment = c(ORCID =
+       '0000-0001-9243-7821')), person(given = ""Yuhan"", family =
+       ""Hao"", email = 'yhao@nygenome.org', role = 'aut', comment
+       = c(ORCID = '0000-0002-1810-0822')), person(given =
+       ""Austin"", family = ""Hartman"", email =
+       'ahartman@nygenome.org', role = 'aut', comment = c(ORCID =
+       '0000-0001-7278-1852')), person(given = ""Gesmira"", family
+       = ""Molla"", email = 'gmolla@nygenome.org', role = 'aut',
+       comment = c(ORCID = '0000-0002-8628-5056')), person(given
+       = 'Andrew', family = 'Butler', email =
+       'abutler@nygenome.org', role = 'aut', comment = c(ORCID =
+       '0000-0003-3608-0463')), person(given = 'Tim', family =
+       'Stuart', email = 'tstuart@nygenome.org', role = 'aut',
+       comment = c(ORCID = '0000-0002-3044-0897')), person(given
+       = ""Madeline"", family = ""Kowalski"", email =
+       ""mkowalski@nygenome.org"", role = ""ctb"", comment = c(ORCID
+       = ""0000-0002-5655-7620"")), person(given = ""Saket"", family
+       = ""Choudhary"", email = ""schoudhary@nygenome.org"", role =
+       ""ctb"", comment = c(ORCID = ""0000-0001-5202-7633"")),
+       person(given = ""Skylar"", family = ""Li"", email =
+       ""sli@nygenome.org"", role = ""ctb""), person(given =
+       ""Longda"", family = ""Jiang"", email = ""ljiang@nygenome.org"",
+       role = ""ctb"", comment = c(ORCID = ""0000-0003-4964-6497"")),
+       person(given = ""Anagha"", family = ""Shenoy"", email =
+       ""ashenoy@nygenome.org"", role = ""ctb"", comment = c(ORCID =
+       ""0000-0002-0537-6862"")), person(given = 'Jeff', family =
+       'Farrell', email = 'jfarrell@g.harvard.edu', role =
+       'ctb'), person(given = 'Shiwei', family = 'Zheng', email =
+       'szheng@nygenome.org', role = 'ctb', comment = c(ORCID =
+       '0000-0001-6682-6743')), person(given = 'Christoph',
+       family = 'Hafemeister', email =
+       'chafemeister@nygenome.org', role = 'ctb', comment =
+       c(ORCID = '0000-0001-6365-8254')), person(given =
+       'Patrick', family = 'Roelli', email =
+       'proelli@nygenome.org', role = 'ctb') )
+Description: Defines S4 classes for single-cell genomic data and
+       associated information, such as dimensionality reduction
+       embeddings, nearest-neighbor graphs, and
+       spatially-resolved coordinates. Provides data access
+       methods and R-native hooks to ensure the Seurat object is
+       familiar to other R users. See Satija R, Farrell J,
+       Gennert D, et al (2015) <doi:10.1038/nbt.3192>, Macosko E,
+       Basu A, Satija R, et al (2015)
+       <doi:10.1016/j.cell.2015.05.002>, and Stuart T, Butler A,
+       et al (2019) <doi:10.1016/j.cell.2019.05.031>, Hao Y, Hao
+       S, et al (2021) <doi:10.1016/j.cell.2021.04.048> and Hao
+       Y, et al (2023) <doi:10.1101/2022.02.24.481684> for more
+       details.
 License: MIT + file LICENSE
 URL: https://satijalab.github.io/seurat-object/,
-         https://github.com/satijalab/seurat-object
+       https://github.com/satijalab/seurat-object
 BugReports: https://github.com/satijalab/seurat-object/issues
 Additional_repositories: https://bnprks.r-universe.dev
 Depends: R (>= 4.1.0), sp (>= 1.5.0)
-Imports: future, future.apply, generics, grDevices, grid, lifecycle, Matrix (>=
-         1.6.4), methods, progressr, Rcpp (>= 1.0.5), rlang (>= 0.4.7), spam, stats,
-         tools, utils
-Suggests: BPCells, DelayedArray, fs (>= 1.5.2), sf (>= 1.0.0), ggplot2, HDF5Array,
-         rmarkdown, testthat
+Imports: future, future.apply, generics, grDevices, grid,
+       lifecycle, Matrix (>= 1.6.4), methods, progressr, Rcpp (>=
+       1.0.5), rlang (>= 0.4.7), spam, stats, tools, utils
+Suggests: BPCells, DelayedArray, fs (>= 1.5.2), sf (>= 1.0.0),
+       ggplot2, HDF5Array, rmarkdown, testthat
 LinkingTo: Rcpp, RcppEigen
 Config/Needs/website: pkgdown
 BuildManual: true
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 7.3.2
-Collate: 'RcppExports.R' 'zzz.R' 'generics.R' 'keymixin.R' 'graph.R' 'default.R'
-         .....
+Collate: 'RcppExports.R' 'zzz.R' 'generics.R' 'keymixin.R'
+       'graph.R' .....
 NeedsCompilation: yes
 Packaged: 2025-08-27 21:37:49 UTC; root
-Author: Paul Hoffman [aut] (ORCID: <https://orcid.org/0000-0002-7693-8957>), Rahul
-         Satija [aut, cre] (ORCID: <https://orcid.org/0000-0001-9448-8833>), David
-         Collins [aut] (ORCID: <https://orcid.org/0000-0001-9243-7821>), Yuhan Hao
-         [aut] (ORCID: <https://orcid.org/0000-0002-1810-0822>), Austin Hartman
-         [aut] (ORCID: <https://orcid.org/0000-0001-7278-1852>), Gesmira Molla [aut]
-         (ORCID: <https://orcid.org/0000-0002-8628-5056>), Andrew Butler [aut]
-         (ORCID: <https://orcid.org/0000-0003-3608-0463>), Tim Stuart [aut] (ORCID:
-         <https://orcid.org/0000-0002-3044-0897>), Madeline Kowalski [ctb] (ORCID:
-         <https://orcid.org/0000-0002-5655-7620>), Saket Choudhary [ctb] (ORCID:
-         <https://orcid.org/0000-0001-5202-7633>), Skylar Li [ctb], Longda Jiang
-         [ctb] (ORCID: <https://orcid.org/0000-0003-4964-6497>), Anagha Shenoy [ctb]
-         (ORCID: <https://orcid.org/0000-0002-0537-6862>), Jeff Farrell [ctb],
-         Shiwei Zheng [ctb] (ORCID: <https://orcid.org/0000-0001-6682-6743>),
-         Christoph Hafemeister [ctb] (ORCID:
-         <https://orcid.org/0000-0001-6365-8254>), Patrick Roelli [ctb]
+Author: Paul Hoffman [aut] (ORCID:
+       <https://orcid.org/0000-0002-7693-8957>), Rahul Satija
+       [aut, cre] (ORCID:
+       <https://orcid.org/0000-0001-9448-8833>), David Collins
+       [aut] (ORCID: <https://orcid.org/0000-0001-9243-7821>),
+       Yuhan Hao [aut] (ORCID:
+       <https://orcid.org/0000-0002-1810-0822>), Austin Hartman
+       [aut] (ORCID: <https://orcid.org/0000-0001-7278-1852>),
+       Gesmira Molla [aut] (ORCID:
+       <https://orcid.org/0000-0002-8628-5056>), Andrew Butler
+       [aut] (ORCID: <https://orcid.org/0000-0003-3608-0463>),
+       Tim Stuart [aut] (ORCID:
+       <https://orcid.org/0000-0002-3044-0897>), Madeline
+       Kowalski [ctb] (ORCID:
+       <https://orcid.org/0000-0002-5655-7620>), Saket Choudhary
+       [ctb] (ORCID: <https://orcid.org/0000-0001-5202-7633>),
+       Skylar Li [ctb], Longda Jiang [ctb] (ORCID:
+       <https://orcid.org/0000-0003-4964-6497>), Anagha Shenoy
+       [ctb] (ORCID: <https://orcid.org/0000-0002-0537-6862>),
+       Jeff Farrell [ctb], Shiwei Zheng [ctb] (ORCID:
+       <https://orcid.org/0000-0001-6682-6743>), Christoph
+       Hafemeister [ctb] (ORCID:
+       <https://orcid.org/0000-0001-6365-8254>), Patrick Roelli
+       [ctb]
 Maintainer: Rahul Satija <seurat@nygenome.org>
 Repository: CRAN
 Date/Publication: 2025-08-27 22:30:01 UTC
-Built: R 4.5.1; x86_64-w64-mingw32; 2025-09-24 01:57:49 UTC; windows
+Built: R 4.5.1; x86_64-w64-mingw32; 2025-09-24 01:57:49 UTC;
+       windows
 Archs: x64
 
 -- File: C:/Users/myj23/AppData/Local/Programs/R/R-4.5.1/library/SeuratObject/Meta/package.rds 
@@ -219,24 +269,29 @@ Title: SeuratExtend
 Version: 1.2.5
 Author: Yichao Hua
 Maintainer: Yichao Hua <yichao.hua@uk-essen.de>
-Description: SeuratExtend is an R package designed to improve and simplify the
-         analysis of scRNA-seq data using the Seurat object. It provides an array of
-         enhanced visualization tools, an integrated functional and pathway analysis
-         pipeline, seamless integration with popular Python tools, and a suite of
-         utility functions to aid in data manipulation and presentation.
+Description: SeuratExtend is an R package designed to improve and
+       simplify the analysis of scRNA-seq data using the Seurat
+       object. It provides an array of enhanced visualization
+       tools, an integrated functional and pathway analysis
+       pipeline, seamless integration with popular Python tools,
+       and a suite of utility functions to aid in data
+       manipulation and presentation.
 License: GPL (>= 3)
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 7.3.2
 VignetteBuilder: knitr
-Imports: Seurat, dplyr, remotes, rlist, mosaic, ggplot2, reshape2, purrr, magrittr,
-         tidyr, scales, ggpubr, BiocManager, reticulate, glue, hdf5r
-Suggests: rgl, GSVA, GSVAdata, slingshot, AUCell, biomaRt, ontologyIndex, viridis,
-         doMC, doRNG, doParallel, foreach, mgsa, GSEABase, egg, loomR, mgsa, knitr,
-         rmarkdown, RColorBrewer
+Imports: Seurat, dplyr, remotes, rlist, mosaic, ggplot2,
+       reshape2, purrr, magrittr, tidyr, scales, ggpubr,
+       BiocManager, reticulate, glue, hdf5r
+Suggests: rgl, GSVA, GSVAdata, slingshot, AUCell, biomaRt,
+       ontologyIndex, viridis, doMC, doRNG, doParallel, foreach,
+       mgsa, GSEABase, egg, loomR, mgsa, knitr, rmarkdown,
+       RColorBrewer
 Depends: R (>= 3.6), SeuratExtendData, SeuratObject
 Remotes: huayc09/SeuratExtendData
-Collate: 'AUCell_basic.R' 'Anndata.R' 'generics.R' 'CalcStats.R' 'Cellrank.R' .....
+Collate: 'AUCell_basic.R' 'Anndata.R' 'generics.R' 'CalcStats.R'
+       .....
 RemoteType: github
 RemoteHost: api.github.com
 RemoteRepo: SeuratExtend

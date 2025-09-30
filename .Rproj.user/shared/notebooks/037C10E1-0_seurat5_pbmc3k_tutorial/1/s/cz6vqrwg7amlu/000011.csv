@@ -1,0 +1,8 @@
+"0","pbmc.markers %>% group_by(cluster) %>% top_n(n = 10, wt = avg_log2FC) -> top10"
+"0",""
+"0","# DoHeatmap doesn't automatically use the correct slot/layer anymore. need to figure out to make this occur automatically."
+"0","DefaultLayer(pbmc[[""RNA""]]) <- ""scale.data"""
+"0","DoHeatmap(pbmc, features = top10$gene) + NoLegend()"
+"2","G2;H2;Warningh in DoHeatmap(pbmc, features = top10$gene) :
+  The following features were omitted as they were not found in the scale.data slot for the RNA assay: P2RY13, PON2, LGMN, KLRF1, SH2D1B, BATF3, MS4A4A, HES4, CDKN1C, CD8A, HLA-DOB, PKIG, TSPAN13, FCER2, VPREB3, SUSD3, OPTN, TTC39C, CD40LG, TRAT1, FLT3LG, LEPROTL1, TCF7, PIK3IP1, PRKCQ-AS1, NOSIP, LEF1, CCR7, LDHBg
+"

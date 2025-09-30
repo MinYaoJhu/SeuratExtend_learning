@@ -1,0 +1,21 @@
+"0","# find markers for every cluster compared to all remaining cells, report only the positive ones"
+"0","pbmc.markers <- FindAllMarkers(pbmc, only.pos = TRUE, min.pct = 0.25, logfc.threshold = 0.25)"
+"2","G3;Calculating cluster 0
+g"
+"2","G3;Calculating cluster 1
+g"
+"2","G3;Calculating cluster 2
+g"
+"2","G3;Calculating cluster 3
+g"
+"2","G3;Calculating cluster 4
+g"
+"2","G3;Calculating cluster 5
+g"
+"2","G3;Calculating cluster 6
+g"
+"2","G3;Calculating cluster 7
+g"
+"2","G3;Calculating cluster 8
+g"
+"0","pbmc.markers %>% group_by(cluster) %>% slice_max(n = 2, order_by = avg_log2FC)"

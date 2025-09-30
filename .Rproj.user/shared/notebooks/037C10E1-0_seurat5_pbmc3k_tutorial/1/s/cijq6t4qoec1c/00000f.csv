@@ -1,0 +1,8 @@
+"0","# you can plot raw counts as well"
+"0","VlnPlot(pbmc, features = c(""NKG7"", ""PF4""), slot = 'counts', log = TRUE)"
+"2","G2;H2;Warningh: [38;5;250mThe `slot` argument of `VlnPlot()` is deprecated as of Seurat 5.0.0.
+[36mℹ[38;5;250m Please use the `layer` argument instead.
+[90mThis warning is displayed once every 8 hours.[38;5;250m
+[90mCall `lifecycle::last_lifecycle_]8;;ide:run:warnings()warnings()]8;;` to see where this warning was[38;5;250m
+[90mgenerated.[38;5;250m[39mg
+"

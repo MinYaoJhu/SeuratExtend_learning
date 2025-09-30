@@ -1,0 +1,2 @@
+"0","# Show QC metrics for the first 5 cells"
+"0","head(pbmc@meta.data, 5)"

@@ -1,0 +1,3 @@
+"0","# find all markers of cluster 2"
+"0","cluster2.markers <- FindMarkers(pbmc, ident.1 = 2, min.pct = 0.25)"
+"0","head(cluster2.markers, n = 5)"

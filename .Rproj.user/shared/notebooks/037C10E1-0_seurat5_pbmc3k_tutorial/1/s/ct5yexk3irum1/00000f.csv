@@ -1,0 +1,9 @@
+"0","# Look at cluster IDs of the first 5 cells
+head(Idents(pbmc), 5)
+"
+"1","AAACATACAACCAC-1 AAACATTGAGCTAC-1 AAACATTGATCAGC-1 AAACCGTGCTTCCG-1 
+               0                3                2                1 
+AAACCGTGTATGCG-1 
+               6 
+Levels: 0 1 2 3 4 5 6 7 8
+"

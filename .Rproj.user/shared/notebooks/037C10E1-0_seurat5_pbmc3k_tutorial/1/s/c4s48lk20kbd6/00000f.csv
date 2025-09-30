@@ -1,0 +1,4 @@
+"0","new.cluster.ids <- c(""Naive CD4 T"", ""CD14+ Mono"", ""Memory CD4 T"", ""B"", ""CD8 T"", ""FCGR3A+ Mono"", ""NK"", ""DC"", ""Platelet"")"
+"0","names(new.cluster.ids) <- levels(pbmc)"
+"0","pbmc <- RenameIdents(pbmc, new.cluster.ids)"
+"0","DimPlot(pbmc, reduction = 'umap', label = TRUE, pt.size = 0.5) + NoLegend()"

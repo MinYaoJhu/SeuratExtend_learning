@@ -1,0 +1,3 @@
+"0","# find all markers distinguishing cluster 5 from clusters 0 and 3"
+"0","cluster5.markers <- FindMarkers(pbmc, ident.1 = 5, ident.2 = c(0, 3), min.pct = 0.25)"
+"0","head(cluster5.markers, n = 5)"

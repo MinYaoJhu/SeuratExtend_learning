@@ -1,0 +1,11 @@
+"0","dense.size <- object.size(as.matrix(pbmc.data))"
+"0","dense.size"
+"1","709591472 bytes
+"
+"0","sparse.size <- object.size(pbmc.data)"
+"0","sparse.size"
+"1","29905192 bytes
+"
+"0","dense.size / sparse.size"
+"1","23.7 bytes
+"

@@ -1,0 +1,9 @@
+"0","pbmc <- ScaleData(pbmc)"
+"2","G3;Centering and scaling data matrix
+g"
+"2","  |                                                                         |                                                                 |   0%"
+"2","  |                                                                         |================================                                 |  50%"
+"2","  |                                                                         |=================================================================| 100%
+"
+"2","G2;H2;Warningh: Different features in new layer data than already exists for scale.datag
+"

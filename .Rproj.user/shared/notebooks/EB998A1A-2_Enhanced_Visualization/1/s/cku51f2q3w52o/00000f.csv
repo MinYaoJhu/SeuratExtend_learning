@@ -1,0 +1,2 @@
+"0","# Basic split visualization"
+"0","DotPlot2(pbmc, features = genes, group.by = ""cluster"", split.by = ""orig.ident"", show_grid = FALSE)"

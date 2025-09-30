@@ -1,0 +1,2 @@
+"0","toplot2 <- CalcStats(pbmc, features = genes[1:500], method = ""zscore"", order = ""p"")"
+"0","Heatmap(toplot2, lab_fill = ""zscore"", feature_text_subset = genes[1:20], expand_limits_x = c(-0.5, 11))"

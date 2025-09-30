@@ -1,0 +1,3 @@
+"0","# Select some variable features"
+"0","genes <- VariableFeatures(pbmc)[1:10]"
+"0","DotPlot2(pbmc, features = genes)"

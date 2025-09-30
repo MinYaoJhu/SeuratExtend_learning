@@ -1,0 +1,7 @@
+"0","VlnPlot2(pbmc, "
+"0","         features = genes, "
+"0","         group.by = ""cluster"", "
+"0","         cells = cells,"
+"0","         stat.method = ""t.test"", "
+"0","         comparisons = list(c(1,2), c(1,3)), "
+"0","         hide.ns = FALSE)"

@@ -1,0 +1,3 @@
+"0","# Calculate z-scores for variable features"
+"0","genes <- VariableFeatures(pbmc)"
+"0","toplot <- CalcStats(pbmc, features = genes, method = ""zscore"", order = ""p"", n = 5)"

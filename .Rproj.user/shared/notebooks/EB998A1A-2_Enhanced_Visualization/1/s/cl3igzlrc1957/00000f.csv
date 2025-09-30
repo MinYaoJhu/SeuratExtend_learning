@@ -1,0 +1,8 @@
+"0","palette_list <- list("
+"0","  ""n=2"" = color_pro(2),"
+"0","  ""n=5"" = color_pro(5),"
+"0","  ""n=10"" = color_pro(10),"
+"0","  ""n=20"" = color_pro(20),"
+"0","  ""n=50"" = color_pro(50)"
+"0",")"
+"0","show_col2(palette_list, ncol = 10)"

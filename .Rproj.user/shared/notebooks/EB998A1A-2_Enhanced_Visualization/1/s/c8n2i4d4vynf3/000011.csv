@@ -1,0 +1,2 @@
+"0","cells <- colnames(pbmc)[pbmc$cluster %in% c(""B"", ""CD14+ Mono"", ""CD8 T"")]"
+"0","VlnPlot2(pbmc, features = genes, group.by = ""cluster"", cells = cells)"

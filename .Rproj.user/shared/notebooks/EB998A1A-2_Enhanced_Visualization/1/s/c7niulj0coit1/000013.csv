@@ -1,0 +1,6 @@
+"0","# Add simplified axis indicators"
+"0","DimPlot2("
+"0","  pbmc, "
+"0","  features = c(""cluster"", ""orig.ident"", ""CD14"", ""CD3D""),"
+"0","  theme = NoAxes()"
+"0",") + theme_umap_arrows()"

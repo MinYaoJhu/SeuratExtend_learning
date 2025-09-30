@@ -1,0 +1,2 @@
+"0","b_cells <- colnames(pbmc)[pbmc$cluster == ""B""]"
+"0","DimPlot2(pbmc, cells.highlight = b_cells)"

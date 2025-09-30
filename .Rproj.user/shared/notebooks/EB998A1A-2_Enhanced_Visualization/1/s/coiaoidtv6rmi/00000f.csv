@@ -1,0 +1,7 @@
+"0","library(viridis)"
+"0","par(mfrow=c(4,2), mar=c(1,1,2,1))"
+"0","for(option in LETTERS[1:8]) {"
+"0","  image(1:100, 1, as.matrix(1:100), col=viridis(100, option=option),"
+"0","        main=paste0(""Viridis option '"", toupper(option), ""'""), "
+"0","        xlab="""", ylab="""", axes=FALSE)"
+"0","}"

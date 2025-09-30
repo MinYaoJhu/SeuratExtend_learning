@@ -1,6 +1,6 @@
 "0","summary(pbmc$cluster)"
-"1"," Naive CD4 T   CD14+ Mono Memory CD4 T            B        CD8 T 
-         692          483          449          342          313 
-FCGR3A+ Mono           NK           DC     Platelet 
-         159          154           32           14 
+"1"," Naive CD4 T   CD14+ Mono Memory CD4 T            B        CD8 T FCGR3A+ Mono           NK 
+         692          483          449          342          313          159          154 
+          DC     Platelet 
+          32           14 
 "

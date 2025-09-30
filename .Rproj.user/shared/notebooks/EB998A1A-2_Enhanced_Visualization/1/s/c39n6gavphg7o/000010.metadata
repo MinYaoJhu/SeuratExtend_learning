@@ -1,0 +1,1 @@
+{"height":4.0,"width":7.0,"dpi":-1.0,"size_behavior":1,"conditions":[[0,"\u001B[38;5;250mIgnoring unknown labels:\n\u001B[36m•\u001B[38;5;250m \u001B[32mcolour\u001B[38;5;250m : \u001B[34m\"-log10(p)\"\u001B[38;5;250m\u001B[39m\n"],[1,"Warning :\u001B[38;5;250m`label` cannot be a \u001B[34m<ggplot2::element_blank>\u001B[38;5;250m object.\u001B[39m\n"]]}

@@ -1,0 +1,6 @@
+"0","DefaultAssay(pbmc)"
+"1","[1] ""RNA""
+"
+"0","setdiff(c(""CD3D"",""CD14"",""CD79A"",""FCGR3A"",""LYZ"",""NKG7""), rownames(pbmc))"
+"1","character(0)
+"

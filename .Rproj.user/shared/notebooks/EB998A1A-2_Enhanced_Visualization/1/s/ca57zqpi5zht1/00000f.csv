@@ -1,0 +1,6 @@
+"0","DotPlot2(pbmc, "
+"0","         features = grouped_features, "
+"0","         color_scheme = ""BuRd"", "
+"0","         border = FALSE,        # Remove dot borders"
+"0","         show_grid = FALSE,     # Remove grid lines"
+"0","         flip = TRUE)          # Flip coordinates"

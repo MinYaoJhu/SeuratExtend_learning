@@ -1,0 +1,3 @@
+"0","gene_groups <- sample(c(""group1"", ""group2"", ""group3""), nrow(toplot2), replace = TRUE)"
+"0","Heatmap(toplot2, lab_fill = ""zscore"", facet_row = gene_groups) +"
+"0","  theme(axis.text.y = element_blank())"

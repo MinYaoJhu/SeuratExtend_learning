@@ -1,0 +1,6 @@
+"0","# Add arrows to each subplot"
+"0","DimPlot2("
+"0","  pbmc, "
+"0","  features = c(""cluster"", ""orig.ident"", ""CD14"", ""CD3D""),"
+"0","  theme = theme_umap_arrows()"
+"0",")"

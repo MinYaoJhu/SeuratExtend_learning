@@ -1,0 +1,6 @@
+"0","WaterfallPlot("
+"0","  pbmc, group.by = ""cluster"", features = VariableFeatures(pbmc)[1:80],"
+"0","  ident.1 = ""CD14+ Mono"", ident.2 = ""CD8 T"", length = ""logFC"","
+"0","  top.n = 20, color_theme = ""D"")"
+"2","G3;Using pseudocount = 1 for logFC calculation.
+g"

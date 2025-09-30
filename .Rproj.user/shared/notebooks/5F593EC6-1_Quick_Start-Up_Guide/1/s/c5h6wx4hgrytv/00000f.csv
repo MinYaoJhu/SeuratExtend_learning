@@ -1,0 +1,13 @@
+"0","# Compute diffusion map"
+"0","mye_small <- Palantir.RunDM(mye_small)"
+"0","gc()"
+"2","G1;H1;Errorh: object 'mye_small' not found
+Error during wrapup: not that many frames on the stack
+Error: no more error handlers available (recursive errors?); invoking 'abort' restart
+g"
+"0","# Visualize the first two diffusion map dimensions"
+"0","DimPlot2(mye_small, reduction = ""ms"")"
+"2","G1;H1;Errorh: object 'mye_small' not found
+Error during wrapup: not that many frames on the stack
+Error: no more error handlers available (recursive errors?); invoking 'abort' restart
+g"

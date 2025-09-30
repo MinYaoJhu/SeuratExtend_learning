@@ -1,0 +1,6 @@
+"0","library(cowplot)"
+"0","plot_grid("
+"0","  DimPlot2(pbmc, cols = ""default"", theme = NoAxes() + NoLegend()),"
+"0","  ClusterDistrBar(pbmc$orig.ident, pbmc$cluster, cols = ""default"", flip = FALSE, border = ""black"") +"
+"0","    theme(axis.title.x = element_blank())"
+"0",")"

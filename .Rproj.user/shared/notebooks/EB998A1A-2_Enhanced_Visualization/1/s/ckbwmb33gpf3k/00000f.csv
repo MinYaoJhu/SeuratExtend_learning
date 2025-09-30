@@ -1,0 +1,2 @@
+"0","pbmc <- GeneSetAnalysis(pbmc, genesets = hall50$human)"
+"0","matr <- pbmc@misc$AUCell$genesets"

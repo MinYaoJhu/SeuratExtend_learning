@@ -1,0 +1,6 @@
+"0","DefaultAssay(pbmc) <- ""RNA"""
+"0",""
+"0","genes <- c(""CD3D"", ""CD14"", ""CD79A"", ""FCGR3A"", ""LYZ"")"
+"0","setdiff(genes, rownames(pbmc))  # should print character(0)"
+"1","character(0)
+"

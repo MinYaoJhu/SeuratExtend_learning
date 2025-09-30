@@ -1,0 +1,5 @@
+"0","palette_list <- list("
+"0","  ""sort_hue"" = color_pro(10, 1, sort = ""hue""),"
+"0","  ""sort_diff"" = color_pro(10, 1, sort = ""diff"")"
+"0",")"
+"0","show_col2(palette_list, ncol = 10)"

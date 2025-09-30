@@ -1,0 +1,7 @@
+"0","# Using colors instead of borders for split groups"
+"0","DotPlot2(pbmc, "
+"0","         features = genes, "
+"0","         group.by = ""cluster"", "
+"0","         split.by = ""orig.ident"", "
+"0","         split.by.method = ""color"", "
+"0","         show_grid = FALSE)"

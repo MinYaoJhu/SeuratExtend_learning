@@ -1,7 +1,0 @@
-"0","lowExprGenes <- c(""CCR7"", ""IL7R"", ""TCF7"")"
-"0","VlnPlot2(pbmc, "
-"0","         features = lowExprGenes, "
-"0","         show.mean = TRUE,      # Show mean and median lines"
-"0","         mean_colors = c(""red"", ""blue""),  # Colors for mean and median"
-"0","         cols = ""light"",        # Light color scheme for better visibility"
-"0","         ncol = 1)"

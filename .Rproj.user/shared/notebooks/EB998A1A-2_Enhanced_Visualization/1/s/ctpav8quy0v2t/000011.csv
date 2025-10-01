@@ -1,6 +1,0 @@
-"0","VlnPlot2(pbmc, "
-"0","         features = genes, "
-"0","         group.by = ""cluster"", "
-"0","         cells = cells,"
-"0","         stat.method = ""wilcox.test"", "
-"0","         hide.ns = TRUE)"

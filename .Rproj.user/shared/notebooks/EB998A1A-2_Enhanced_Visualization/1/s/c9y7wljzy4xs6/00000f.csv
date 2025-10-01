@@ -1,7 +1,0 @@
-"0","VolcanoPlot("
-"0","  pbmc,"
-"0","  ident.1 = ""B"","
-"0","  ident.2 = ""CD8 T"","
-"0","  x.threshold = 0.5,    # Log fold change threshold"
-"0","  y.threshold = 2     # -log10(p-value) threshold"
-"0",")"

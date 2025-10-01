@@ -1,3 +1,28 @@
 "0","library(Seurat)"
+"2","G3;Loading required package: SeuratObject
+g"
+"2","G3;Loading required package: sp
+g"
+"2","G2;H2;Warningh: You are running RStudio 2025.5.0.496, which has a custom message and warning handlers that are incompatible with some of the progress handlers in progressr 0.16.0, e.g. 'cli'. Until fixed, one workaround is to disable RStudio's custom handlers, by going to 'Tools' -> 'Global Options ...' -> 'Console' and switch 'Use Extended Display' to 'Errors only'. See <https://github.com/futureverse/progressr/issues/179> for further detailsg
+"
+"2","G3;
+Attaching package: ‘SeuratObject’
+
+g"
+"2","G3;The following objects are masked from ‘package:base’:
+
+    intersect, t
+
+g"
+"2","G3;Registered S3 method overwritten by 'data.table':
+  method           from
+  print.data.table     
+g"
+"2","G3;Registered S3 method overwritten by 'htmlwidgets':
+  method           from         
+  print.htmlwidget tools:rstudio
+g"
 "0","library(SeuratExtend)"
+"2","G3;Loading required package: SeuratExtendData
+g"
 "0","set.seed(2025)"

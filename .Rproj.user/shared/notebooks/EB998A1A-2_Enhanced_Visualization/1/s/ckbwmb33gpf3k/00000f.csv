@@ -1,2 +1,7 @@
-"0","pbmc <- GeneSetAnalysis(pbmc, genesets = hall50$human)"
-"0","matr <- pbmc@misc$AUCell$genesets"
+"0","str(matr)
+"
+"1"," num [1:48, 1:2638] 0.1016 0.09272 0.02363 0.00286 0.01119 ...
+ - attr(*, ""dimnames"")=List of 2
+  ..$ gene sets: chr [1:48] ""HALLMARK_TNFA_SIGNALING_VIA_NFKB"" ""HALLMARK_HYPOXIA"" ""HALLMARK_CHOLESTEROL_HOMEOSTASIS"" ""HALLMARK_MITOTIC_SPINDLE"" ...
+  ..$ cells    : chr [1:2638] ""AAACATACAACCAC-1"" ""AAACATTGAGCTAC-1"" ""AAACATTGATCAGC-1"" ""AAACCGTGCTTCCG-1"" ...
+"

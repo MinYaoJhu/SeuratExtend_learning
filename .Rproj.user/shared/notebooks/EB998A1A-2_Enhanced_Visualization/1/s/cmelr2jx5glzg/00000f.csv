@@ -3,4 +3,4 @@
 "0","matr <- pbmc@misc$AUCell$genesets"
 "0",""
 "0","# Plot the first three pathways"
-"0","VlnPlot2(matr[1:3,], f = pbmc$cluster, ncol = 1)"
+"0","VlnPlot2(matr[1:3, ], f = pbmc$cluster, ncol = 1)"

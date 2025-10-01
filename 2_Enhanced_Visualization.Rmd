@@ -211,23 +211,43 @@ setdiff(c("CD3D","CD14","CD79A","FCGR3A","LYZ","NKG7"), rownames(pbmc))
 ```
 
 ```{r, fig.width=6.5, fig.height=3.5, message=FALSE, warning=FALSE}
-# p1 <- FeaturePlot3(pbmc, feature.1 = "CD3D", feature.2 = "CD14", feature.3 = "CD79A",
-#                    color = "ryb", pt.size = 0.5)
-# 
-# # “Skip” a channel by duplicating one gene (keeps 3 channels consistent)
-# p2 <- FeaturePlot3(pbmc, feature.1 = "FCGR3A", feature.2 = "LYZ", feature.3 = "LYZ",
-#                    color = "ryb", pt.size = 0.5)
-# 
-# p1 + p2  # patchwork
+p1 <- FeaturePlot3(pbmc, feature.1 = "CD3D", feature.2 = "CD14", feature.3 = "CD79A",
+                   color = "ryb", pt.size = 0.5)
+
+p2 <- FeaturePlot3(pbmc, feature.1 = "FCGR3A", feature.2 = "LYZ", feature.3 = "RPLP0",
+                   color = "ryb", pt.size = 0.5)
+
+p1 + p2 # patchwork
 ```
+
+```{r}
+library(patchwork)
+library(grid)    # for unit()
+
+# collect legends, move to bottom, add margins, prevent clipping
+(p1 + p2) +
+  plot_layout(guides = "collect") &
+  theme(
+    legend.position = "bottom",
+    legend.justification = c(0.5, 0),
+    legend.box.margin = margin(t = 4, r = 20, b = 12, l = 20),
+    legend.key.width  = unit(12, "mm"),
+    legend.key.height = unit(4,  "mm"),
+    plot.margin = margin(t = 10, r = 30, b = 30, l = 10)
+  ) &
+  coord_cartesian(clip = "off")
+
+```
+
 
 Using the RGB system:
 ```{r, fig.width=6.5, fig.height=3.5, message=FALSE, warning=FALSE}
 # FeaturePlot3.grid(
 #   pbmc,
-#   features = c("CD3D", "CD14", "CD79A", "FCGR3A", NA, "LYZ"),
+#   features = c("CD3D","CD14","CD79A",   # panel 1
+#                "FCGR3A","LYZ","RPLP0"), # panel 2 (unique 3rd)
 #   color = "rgb",
-#   pt.size = 1
+#   pt.size = 0.5
 # )
 ```
 
@@ -237,9 +257,9 @@ You can also apply the dark theme to FeaturePlot3.grid for enhanced visualizatio
 
 ```{r, fig.width=6.5, fig.height=3.5, message=FALSE, warning=FALSE}
 # FeaturePlot3.grid(
-#   pbmc, 
-#   features = c("CD3D", "CD14", "CD79A", "FCGR3A", NA, "LYZ"), 
-#   color = "rgb", 
+#   pbmc,
+#   features = c("CD3D", "CD14", "CD79A", "FCGR3A", "RPLP0", "LYZ"),
+#   color = "rgb",
 #   pt.size = 1,
 #   dark.theme = TRUE,
 #   legend = TRUE
@@ -269,6 +289,11 @@ First, let's generate a sample matrix using the `CalcStats` function:
 genes <- VariableFeatures(pbmc)
 toplot <- CalcStats(pbmc, features = genes, method = "zscore", order = "p", n = 5)
 ```
+
+> Calculate Matrix Statistics Grouped by Clusters
+Computes various statistics (mean, median, zscore, tscore, etc.) on a matrix, grouped by clusters.
+
+> CalcStats(object, ...)
 
 Now, we can produce a basic heatmap:
 
@@ -324,7 +349,9 @@ Heatmap(toplot2, lab_fill = "zscore", facet_row = gene_groups) +
 ### Introduction
 
 While heatmaps are excellent for visualizing overall patterns, dot plots offer a complementary visualization that combines two key pieces of information:
+
 1. The percentage of cells expressing each feature (represented by dot size)
+
 2. The average expression level in expressing cells (represented by color intensity)
 
 This dual representation can provide more detailed insights than a standard heatmap, particularly when expression patterns vary between cell populations.
@@ -336,6 +363,8 @@ Let's create a basic dot plot for some variable features:
 ```{r, message=FALSE, warning=FALSE, fig.width=6, fig.height=4.5}
 # Select some variable features
 genes <- VariableFeatures(pbmc)[1:10]
+genes
+
 DotPlot2(pbmc, features = genes)
 ```
 
@@ -350,6 +379,7 @@ grouped_features <- list(
   "T_cell_markers" = c("CD3D", "CD8A", "IL7R"),
   "Myeloid_markers" = c("CD14", "FCGR3A", "S100A8")
 )
+grouped_features
 
 DotPlot2(pbmc, features = grouped_features)
 ```
@@ -360,7 +390,13 @@ You can split the visualization by a metadata column to compare expression patte
 
 ```{r, message=FALSE, warning=FALSE, fig.width=8, fig.height=5.5}
 # Basic split visualization
-DotPlot2(pbmc, features = genes, group.by = "cluster", split.by = "orig.ident", show_grid = FALSE)
+DotPlot2(
+  pbmc,
+  features = genes,
+  group.by = "cluster",
+  split.by = "orig.ident",
+  show_grid = FALSE
+)
 ```
 
 ### Alternative Split Visualization
@@ -369,12 +405,14 @@ The split groups can be represented either by border colors (default) or by dot 
 
 ```{r, message=FALSE, warning=FALSE, fig.width=8, fig.height=5}
 # Using colors instead of borders for split groups
-DotPlot2(pbmc, 
-         features = genes, 
-         group.by = "cluster", 
-         split.by = "orig.ident", 
-         split.by.method = "color", 
-         show_grid = FALSE)
+DotPlot2(
+  pbmc,
+  features = genes,
+  group.by = "cluster",
+  split.by = "orig.ident",
+  split.by.method = "color",
+  show_grid = FALSE
+)
 ```
 
 ### Customizing Appearance
@@ -382,12 +420,16 @@ DotPlot2(pbmc,
 You can customize various aspects of the plot, including color schemes, dot sizes, and grid lines:
 
 ```{r, message=FALSE, warning=FALSE, fig.width=7, fig.height=5}
-DotPlot2(pbmc, 
-         features = grouped_features, 
-         color_scheme = "BuRd", 
-         border = FALSE,        # Remove dot borders
-         show_grid = FALSE,     # Remove grid lines
-         flip = TRUE)          # Flip coordinates
+DotPlot2(
+  pbmc,
+  features = grouped_features,
+  color_scheme = "BuRd",
+  border = FALSE,
+  # Remove dot borders
+  show_grid = FALSE,
+  # Remove grid lines
+  flip = TRUE
+)          # Flip coordinates
 ```
 
 ## Create an Enhanced Violin Plot {#create-an-enhanced-violin-plot}
@@ -457,7 +499,10 @@ VlnPlot2(pbmc,
 You can group by cluster and split each cluster by samples:
 
 ```{r, message=FALSE, warning=FALSE, fig.width=9, fig.height=7}
-VlnPlot2(pbmc, features = genes, group.by = "cluster", split.by = "orig.ident")
+VlnPlot2(pbmc,
+         features = genes,
+         group.by = "cluster",
+         split.by = "orig.ident")
 ```
 
 ### Subset Analysis
@@ -466,7 +511,10 @@ You can focus on specific cell types and arrange plots in columns:
 
 ```{r, message=FALSE, warning=FALSE, fig.width=6, fig.height=3}
 cells <- colnames(pbmc)[pbmc$cluster %in% c("B", "CD14+ Mono", "CD8 T")]
-VlnPlot2(pbmc, features = genes, group.by = "cluster", cells = cells)
+VlnPlot2(pbmc,
+         features = genes,
+         group.by = "cluster",
+         cells = cells)
 ```
 
 ### Statistical Analysis
@@ -474,24 +522,28 @@ VlnPlot2(pbmc, features = genes, group.by = "cluster", cells = cells)
 Add statistical annotations using the Wilcoxon test, hiding non-significant results:
 
 ```{r, message=FALSE, warning=FALSE, fig.width=6, fig.height=3.5}
-VlnPlot2(pbmc, 
-         features = genes, 
-         group.by = "cluster", 
-         cells = cells,
-         stat.method = "wilcox.test", 
-         hide.ns = TRUE)
+VlnPlot2(
+  pbmc,
+  features = genes,
+  group.by = "cluster",
+  cells = cells,
+  stat.method = "wilcox.test",
+  hide.ns = TRUE
+)
 ```
 
 Or specify particular comparisons using t-test:
 
 ```{r, message=FALSE, warning=FALSE, fig.width=6, fig.height=3.5}
-VlnPlot2(pbmc, 
-         features = genes, 
-         group.by = "cluster", 
-         cells = cells,
-         stat.method = "t.test", 
-         comparisons = list(c(1,2), c(1,3)), 
-         hide.ns = FALSE)
+VlnPlot2(
+  pbmc,
+  features = genes,
+  group.by = "cluster",
+  cells = cells,
+  stat.method = "t.test",
+  comparisons = list(c(1, 2), c(1, 3)),
+  hide.ns = FALSE
+)
 ```
 
 ### Using Matrix Input
@@ -504,7 +556,7 @@ pbmc <- GeneSetAnalysis(pbmc, genesets = hall50$human)
 matr <- pbmc@misc$AUCell$genesets
 
 # Plot the first three pathways
-VlnPlot2(matr[1:3,], f = pbmc$cluster, ncol = 1)
+VlnPlot2(matr[1:3, ], f = pbmc$cluster, ncol = 1)
 ```
 
 > **Note on Statistical Testing:** When using `stat.method` to add statistical annotations to violin plots, be aware that p-values can be artificially inflated in large single-cell datasets due to the high number of cells. This may result in statistically significant differences (small p-values) even when the biological effect size is minimal. We recommend being cautious with statistical interpretations, especially when visual differences are subtle. Consider examining log fold changes (logFC) between groups to better assess the magnitude of biological differences. Additionally, the percentage of cells expressing a marker (similar to the pct.1 and pct.2 values in Seurat's FindMarkers) is an important metric - if the difference in percentage between groups is minimal, the expression difference may be biologically negligible despite a significant p-value. Parameters like min.pct in differential expression analysis can help filter out features with low expression prevalence. For a comprehensive visualization of differences between two groups, `WaterfallPlot()` (see [Generate a Waterfall Plot](#generate-a-waterfall-plot)) can provide logFC values along with statistical significance. By default, `VlnPlot2` uses the Holm method (`p.adjust.method = "holm"`) to adjust p-values for multiple comparisons.
@@ -528,7 +580,11 @@ ClusterDistrBar(origin = pbmc$orig.ident, cluster = pbmc$cluster)
 To show absolute cell counts instead of proportions:
 
 ```{r, fig.width=7, fig.height=2.8}
-ClusterDistrBar(origin = pbmc$orig.ident, cluster = pbmc$cluster, percent = FALSE)
+ClusterDistrBar(
+  origin = pbmc$orig.ident,
+  cluster = pbmc$cluster,
+  percent = FALSE
+)
 ```
 
 ### Normalized Proportions with Reversed Axes
@@ -544,7 +600,12 @@ For normalized data with reversed axes:
 Create a vertical bar plot:
 
 ```{r, fig.width=3.6, fig.height=4}
-ClusterDistrBar(origin = pbmc$orig.ident, cluster = pbmc$cluster, flip = FALSE, reverse_order = FALSE)
+ClusterDistrBar(
+  origin = pbmc$orig.ident,
+  cluster = pbmc$cluster,
+  flip = FALSE,
+  reverse_order = FALSE
+)
 ```
 
 ### Non-Stacked Display
@@ -552,10 +613,12 @@ ClusterDistrBar(origin = pbmc$orig.ident, cluster = pbmc$cluster, flip = FALSE, 
 Show bars side by side instead of stacked:
 
 ```{r, fig.width=7, fig.height=4}
-ClusterDistrBar(origin = pbmc$orig.ident, 
-                cluster = pbmc$cluster, 
-                flip = FALSE, 
-                stack = FALSE)
+ClusterDistrBar(
+  origin = pbmc$orig.ident,
+  cluster = pbmc$cluster,
+  flip = FALSE,
+  stack = FALSE
+)
 ```
 
 ### Comparing Cluster Distribution Between Conditions (New in v1.2.0)
@@ -588,12 +651,17 @@ First, let's create a matrix using the `GeneSetAnalysis()` function:
 ```{r, fig.width=7, fig.height=7, message=FALSE}
 pbmc <- GeneSetAnalysis(pbmc, genesets = hall50$human)
 matr <- pbmc@misc$AUCell$genesets
+str(matr)
+head(matr)
 ```
 
 Generate a basic waterfall plot comparing two cell types:
 
 ```{r, fig.width=7, fig.height=7, message=FALSE}
-WaterfallPlot(matr, f = pbmc$cluster, ident.1 = "CD14+ Mono", ident.2 = "CD8 T")
+WaterfallPlot(matr,
+              f = pbmc$cluster,
+              ident.1 = "CD14+ Mono",
+              ident.2 = "CD8 T")
 ```
 
 ### WaterfallPlot Style: "segment" (New in v1.1.0)
@@ -751,6 +819,24 @@ VolcanoPlot(
   y = "tscore"
 )
 ```
+
+> the tscore is the test statistic from the differential expression test (essentially the "t-value") rather than a p-value.
+
+SeuratExtend allows you to use the tscore instead of p-values on the y-axis:
+
+- tscore = test statistic (from the Wilcoxon test or t-test, depending on method used).
+
+- It directly reflects the strength of difference between groups, without converting to p-values.
+
+- Larger absolute tscore = stronger separation between groups.
+
+> Why use tscore?
+
+- Better spread on the y-axis → makes it easier to see relative differences between genes.
+
+- Avoids the “ceiling effect” of –log10(p) when all p-values are near zero.
+
+- Especially helpful in big scRNA-seq datasets (like PBMCs with thousands of cells).
 
 ### Using Log2 or Log10 Fold Change (New in v1.2.0)
 

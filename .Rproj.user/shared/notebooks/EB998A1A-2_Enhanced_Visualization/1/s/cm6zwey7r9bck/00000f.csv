@@ -1,1 +1,6 @@
-"0","ClusterDistrBar(origin = pbmc$orig.ident, cluster = pbmc$cluster, flip = FALSE, reverse_order = FALSE)"
+"0","ClusterDistrBar("
+"0","  origin = pbmc$orig.ident,"
+"0","  cluster = pbmc$cluster,"
+"0","  flip = FALSE,"
+"0","  reverse_order = FALSE"
+"0",")"

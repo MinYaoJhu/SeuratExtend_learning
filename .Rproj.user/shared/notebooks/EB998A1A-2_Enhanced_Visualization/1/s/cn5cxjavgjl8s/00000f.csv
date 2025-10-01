@@ -1,4 +1,10 @@
-"0","FeaturePlot3.grid(pbmc, features = c(""CD3D"", ""CD14"", ""CD79A"", ""FCGR3A"", NA, ""LYZ""), color = ""rgb"", pt.size = 1)"
+"0","FeaturePlot3.grid("
+"0","  pbmc,"
+"0","  features = c(""CD3D"",""CD14"",""CD79A"",   # panel 1"
+"0","               ""FCGR3A"",""LYZ"",""RPLP0""), # panel 2 (unique 3rd)"
+"0","  color = ""rgb"","
+"0","  pt.size = 0.5"
+"0",")"
 "2","G1;H1;Errorh in match.names(clabs, names(xi)) : 
   names do not match previous names
 g"

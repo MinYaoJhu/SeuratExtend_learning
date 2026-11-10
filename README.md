@@ -1,4 +1,4 @@
-# SeuratExtend: study notes <img src="assets/logo.svg" align="right" width="130" alt="SeuratExtend study notes badge"/>
+# SeuratExtend: study notes <img src="assets/logo.svg" align="right" width="130" alt="SeuratExtend tutorial notes badge"/>
 
 **My worked tutorials for single-cell RNA-seq analysis with Seurat and SeuratExtend**
 

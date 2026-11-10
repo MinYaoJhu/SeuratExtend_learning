@@ -1,4 +1,15 @@
-.Rproj.user
+# R and RStudio session files
+.Rproj.user/
 .Rhistory
 .RData
 .Ruserdata
+
+# knitr caches
+*_cache/
+
+# Downloaded example data (see README)
+data/
+pbmc3k_filtered_gene_bc_matrices*
+
+# OS files
+.DS_Store

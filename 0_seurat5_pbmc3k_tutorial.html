@@ -2345,7 +2345,7 @@ options(Seurat.object.assay.version = &quot;v5&quot;)
 library(patchwork)
 
 # Load the PBMC dataset
-pbmc.data &lt;- Read10X(data.dir = &quot;D:/Oldroyd_lab/GitHub/SeuratExtend_learning/pbmc3k_filtered_gene_bc_matrices.tar/pbmc3k_filtered_gene_bc_matrices/filtered_gene_bc_matrices/hg19&quot;)
+pbmc.data &lt;- Read10X(data.dir = &quot;data/pbmc3k/filtered_gene_bc_matrices/hg19&quot;)
 # Initialize the Seurat object with the raw (non-normalized data).
 pbmc &lt;- CreateSeuratObject(counts = pbmc.data, project = &quot;pbmc3k&quot;, min.cells = 3, min.features = 200)
 pbmc</code></pre>
